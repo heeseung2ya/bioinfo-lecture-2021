@@ -1,9 +1,11 @@
-# 
-import sys
+# 함수
 
-if len(sys.argv) != 2:
-    print(f'#usage: python {sys.argv[0]} [num]')
-    sys.exit()
 
-num = int(sys.argv[1])
+def greet():
+    print("Hello, Bioinformatics")
 
+
+greet()
+greet()
+greet()
+greet()

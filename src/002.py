@@ -4,12 +4,12 @@ import math
 import sys
 
 if len(sys.argv) != 2:
-    print(f'#usage: python  {sys.argv[0]} [num]')
+    print(f"#usage: python  {sys.argv[0]} [num]")
     sys.exit()
 
 r = int(sys.argv[1])
-#r = int(input('반지름을 입력하세요: '))
-result = (r ** 2) * 3.14
+# r = int(input('반지름을 입력하세요: '))
+result = (r ** 2) * math.pi
 # pi = math.pi 로 pi를 가져올 수도 있다.
 
 print(result)

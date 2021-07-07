@@ -1,19 +1,15 @@
+import sys
 
-def greet():
-    print('Hello, Bioinformatics')
-
-def greet1(name: str) -> None:
-    print(f'Hello, {name}')
-
-def greet2(num: int) -> int:
-    return num * 2
-
-greet()
-ret1 = greet1('heeseung')
-print(ret1)
-# greet1 이라는 함수는 반환값(return)이 없기 때문에 print를 하더라도 아무 값이 없어서 None이라고 출력된다.
-
-ret = greet2(3)
-print(ret)
+if len(sys.argv) != 2:
+    print(f"#usage: python  {sys.argv[0]} [num]")
+    sys.exit()
 
 
+def factorial(num):
+    result = 1
+    for i in range(1, num + 1):
+        result *= i
+    return result
+
+
+print(factorial(int(sys.argv[1])))

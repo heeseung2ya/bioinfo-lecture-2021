@@ -1,0 +1,16 @@
+{
+    "python.pythonPath": "/opt/anaconda3/bin/python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.lintOnSave": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "80"
+    ],
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.formatOnSave": true
+}

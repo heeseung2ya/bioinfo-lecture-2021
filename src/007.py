@@ -1,10 +1,5 @@
 # 중첩 for문
-import sys
 
-if len(sys.argv) != 2:
-    print(f'#usage: python {sys.argv[0]} [num]')
-    sys.exit()
-
-num = int(sys.argv[1])
-
-
+for i in range(2, 10, 2):
+    for j in range(1, 10):
+        print(f"{i} * {j} = {i*j}")

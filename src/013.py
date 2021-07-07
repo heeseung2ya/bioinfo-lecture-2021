@@ -1,7 +1,8 @@
-# 
+import sys
 
+if len(sys.argv) < 2:
+    print(f"#usage: python  {sys.argv[0]} [num]")
+    sys.exit()
 
-name = input('Enter: ')
-print(f'Hello {name}')
-print(type(name))
-
+for i in sys.argv[1:]:
+    print(f"Hello {i}")
