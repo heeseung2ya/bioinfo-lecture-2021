@@ -7,3 +7,4 @@ for i in l_num:
     else:
         d_num[i] += 1
 print(d_num)
+
