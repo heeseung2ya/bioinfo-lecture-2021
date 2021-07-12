@@ -1,3 +1,24 @@
+# with open 쓰지말고 깔끔하게 다시 짜보기
+
+ORIGIN_idx = 0
+seq = ""
+
+file = open("sequence.protein.gb", "r").readlines()
+for line in file:
+    if line.strip() == file[0].strip():
+        title = line.strip()
+    if ORIGIN_idx == 1:
+        seq += "".join(line.strip().split()[1:])
+    elif line.strip() == "ORIGIN":
+        ORIGIN_idx = 1
+open("sequence.protein.gb", "r").close()
+
+for i in range(0, len(seq) + 1, 70):
+    print(seq[i : i + 70])
+
+
+"""
+# 수정 전 코드
 title = ""
 seq = ""
 idx = 0
@@ -20,3 +41,4 @@ for i in range(len(seq)):
     print(seq[i], end="")
     if (i + 1) % 70 == 0:
         print("\n", end="")
+"""

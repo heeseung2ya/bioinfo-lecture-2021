@@ -1,10 +1,31 @@
+# with open 쓰지말고 깔끔하게 다시 짜보기
+
+ORIGIN_idx = 0
+seq = ""
+
+file = open("sequence.protein.gb", "r").readlines()
+for line in file:
+    if line.strip() == file[0].strip():
+        title = line.strip()
+    if ORIGIN_idx == 1:
+        seq += "".join(line.strip().split()[1:])
+    elif line.strip() == "ORIGIN":
+        ORIGIN_idx = 1
+open("sequence.protein.gb", "r").close()
+
+print(f"title: {title}")
+print(f"seq: {seq}")
+
+
+"""
+# 수정 전 코드
 title = ""
 seq = ""
 idx = 0
 cnt = 0
 tmp2 = []
 
-with open("sequence.protein.gp", "r") as fr:
+with open("sequence.protein.gb", "r") as fr:
     for line in fr.readlines():
         if cnt == 0:
             title = line.strip()
@@ -17,3 +38,4 @@ with open("sequence.protein.gp", "r") as fr:
         cnt += 1
 print(f"title: {title}")
 print(f"seq: {seq}")
+"""
