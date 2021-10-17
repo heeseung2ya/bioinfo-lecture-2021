@@ -1,7 +1,3 @@
-with open("sequence.protein.2.fasta", "r") as fr:
-    print("The second line is: ", end="")
-    for line in fr.readlines():
-        if line.startswith(">"):
-            continue
-        else:
-            print(line, end="")
+fr = open('sequence.protein.2.fasta', 'r')
+fr.readline()
+print('The second line is:', fr.readline())
