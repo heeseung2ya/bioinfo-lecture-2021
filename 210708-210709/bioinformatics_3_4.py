@@ -1,9 +1,5 @@
-tmp = ""
-with open("sequence.protein.fasta", "r") as fr:
-    for line in fr.readlines():
-        tmp += line.strip()
-        if line.startswith(">"):
-            tmp += "\n"
+fr = open('sequence.protein.fasta', 'r')
+fw = open('sequence.protein.2.fasta', 'w')
 
-with open("sequence.protein.2.fasta", "w") as fr:
-    fr.write(tmp.strip())
+for line in fr:
+    fw.write(line)
