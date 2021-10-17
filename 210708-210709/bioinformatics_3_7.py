@@ -1,18 +1,16 @@
-title = ""
-seq = ""
+fr = open('sequence.protein.2.fasta', 'r')
 
-with open("sequence.protein.2.fasta", "r") as fr:
-    for line in fr.readlines():
-        if line.startswith(">"):
-            title += line.strip()
-        else:
-            seq += line.strip()
+title = fr.readline().strip()
+seq = ''
+for line in fr:
+    seq += line.strip()
 
-while True:
-    pos = input("Position: ")
-    if pos == "XXX":
-        print("Okay, I will stop.")
+pos = ''
+while 1:
+    pos = input('Position: ')
+    if pos == 'XXX':
+        print('Okay, I will stop.')
         break
     else:
-        int_pos = int(pos)
-        print(f"Three amino acids: {seq[int_pos - 1 : int_pos - 1 + 3]}")
+        pos = int(pos)
+        print('Three amino acids:', seq[pos - 1 : pos - 1 + 3])
