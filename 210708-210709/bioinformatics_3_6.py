@@ -1,10 +1,9 @@
-title = ""
-seq = ""
-with open("sequence.protein.2.fasta", "r") as fr:
-    for line in fr.readlines():
-        if line.startswith(">"):
-            title += line.strip()
-        else:
-            seq += line.strip()
-print(f"title: {title}")
-print(f"seq: {seq}")
+fr = open('sequence.protein.2.fasta', 'r')
+
+title = fr.readline().strip()
+seq = ''
+for line in fr:
+    seq += line.strip()
+
+print('title:', title)
+print('seq:', seq)
