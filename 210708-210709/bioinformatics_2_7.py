@@ -1,24 +1,26 @@
 d_codon = {}
-print_codon = ""
 
-while print_codon != "XXX":
-    in_codon = input("Enter three-base codon to build: ")
-    if in_codon == "XXX":
-        print("Okay, I will switch.")
-        while True:
-            print_codon = input("Enter three-base codon to search: ")
-            if print_codon == "XXX":
-                print("Okay, I will stop.")
-                break
-            print(f"Amino acid for {print_codon}: {d_codon[print_codon]}")
-    else:
-        in_aa = input("Enter amino acid: ")
-        d_codon[in_codon] = in_aa
+def build():    
+    global d_codon
+    codon = ""
+    while codon != 'XXX':
+        codon = input('Enter three-base codon to build: ')
+        aa = input('Enter amino acid: ')
+        d_codon[codon] = aa
+    print('Okay, I will switch.')
+
+def search():
+    global d_codon
+    codon = ""
+    while codon != 'XXX':
+        codon = input('Enter three-base codon to search: ')
+        print(f'Amino acid for {codon}: {d_codon[codon]}')
+    print('Okay, I will stop.')
+
+def main():
+    build()
+    search()
 
 
-def build_codon():
-    pass
-
-
-def search_codon():
-    pass
+if __name__ == "__main__":
+    main()
